@@ -1,9 +1,4 @@
-const Product = require('../models/product.js')
-const Joi = require('joi')
-
-const idSchema = Joi.object().keys({
-  productId: Joi.string().regex(/^[0-9a-fA-F]{24}$/).required()
-})
+const Product = require('../models/product')
 
 module.exports = {
 
@@ -16,25 +11,28 @@ module.exports = {
     const newProduct = new Product(req.body)
     const product = await newProduct.save()
     res.status(201).json(product)
+    console.log(req.body.name)
   },
 
   getProduct: async (req, res, next)=>{
     const {productId} = req.params
-    const product = await newProduct.findById(productId)
+    const product = await Product.findById(productId)
     res.status(200).json(product)
+    console.log(req.body.name)
   },
   
   updateProduct: async (req, res, next)=>{
     const {productId} = req.params
     const newProduct = req.body
-    const oldProduct = await newProduct.findByIdAndUpdate(productId, newProduct)
+    const oldProduct = await Product.findByIdAndUpdate(productId, newProduct)
     res.status(201).json({success: true})
   },
 
-  // deleteProduct: async (req, res, next)=>{
-  //   const newProduct = new Product(req.body)
-  //   const product = await newProduct.save()
-  //   res.status(201).json(product)
-  // }
+  deleteProduct: async (req, res, next)=>{
+    const {productId} = req.params
+    await Product.findByIdAndRemove(productId)
+    res.status(200).json({success: true})
+  }
+  
 
 }

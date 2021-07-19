@@ -1,2 +1,26 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container">
+  <div class="row">
+    <h1>{{title}}</h1>
+    <br>
+
+    <table class="table table-striped" >
+      <thead>
+        {{!-- <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Imagen</th>
+        </tr> --}}
+      </thead>
+      {{#each product}}
+        <tr>
+          <th>{{this.name}}</th>
+          <th>{{this.content}}</th>
+          <th>{{this.image}}</th>
+          <th><a href="/product/delete/{{this.id}}"><img src="/images/edit.png" alt="edit" width="30"></a></th>
+          <th><a href="/product/delete/{{this.id}}"><img src="/images/trash.png" alt="trash" width="30"></a></th>
+        </tr>
+      {{/each}}
+    </table>
+    <a href="/"></a>
+</div>
+<footer><p>Made by Jorge Albarracín - Entrevista AENIMA - 2021</p></footer>
