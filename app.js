@@ -5,19 +5,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const fs = require('fs')
 
-const bodyParser = require('body-parser')
-const img = require('./backend/models/product')
-
 var indexRouter = require('./backend/routes/index');
-var productRouter = require('./backend/routes/product');
-
-const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/db-aenima', { useNewUrlParser: true, useUnifiedTopology: true}, console.log("Database connected successfully"))
+var productForm = require('./backend/routes/productForm')
 
 var app = express();
 
-app.use(bodyParser.urlencoded({ extended: false}))
-app.use(bodyParser.json())
+// app.use(bodyParser.urlencoded({ extended: false}))
+// app.use(bodyParser.json())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,7 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/product', productRouter);
+app.use('/productForm', productForm)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

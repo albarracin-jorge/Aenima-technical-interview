@@ -1,10 +1,16 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: aqua;
 }
 
 a {
   color: #00B7FF;
-  width: "50"
+}
+
+img{
+  width: 50px;
+}
+
+h1, footer{
+  text-align: center;
 }
