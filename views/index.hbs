@@ -8,7 +8,8 @@
         <tr>
           <th>{{this.name}}</th>
           <th>{{this.content}}</th>
-          <th>{{this.imgUrl}}</th>
+          {{!-- <th>{{this.imgUrl}}</th> --}}
+          <th><img src="/images/{{this.imgUrl}}.jpg" alt="test"></th>
           <th><a href="/product/update/{{this._id}}"><img src="/images/edit.png" alt="edit"></a></th>
           <th><a href="/product/delete/{{this._id}}"><img src="/images/trash.png" alt="trash"></a></th>
         </tr>

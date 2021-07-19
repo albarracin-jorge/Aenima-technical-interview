@@ -9,6 +9,7 @@ let Product = require('../models/product')
 //Muestra todos los elementos de la base de datos -- Show all elements inside database
 router.get('/', (req, res, next) => {
   Product.find((err, products) => {
+    console.log(products)
     if (err) throw err;
     res.render('index', { title: 'Test FullStack Developer', product: products });
   });

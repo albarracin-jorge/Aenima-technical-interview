@@ -7,7 +7,8 @@ const productSchema = new Schema({
     imgUrl: String
 }, {versionKey: false})
 
-// const Product = mongoose.model('product', productSchema)
-// module.exports = Product
+productSchema.methods.setImgUrl = function setImgUrl(filename){
+    this.imgUrl = `${filename}`
+}
 
 module.exports = new mongoose.model('product', productSchema)

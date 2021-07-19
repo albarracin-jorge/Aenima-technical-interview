@@ -11,7 +11,7 @@ router.post('/operation', (req, res, next) => {
     let product = new Product({
       name: req.body.name,
       content: req.body.content,
-      imgUrl: req.body.imgUrl
+      imgUrl: req.body.img
     });  
     product.save();
   } else {    
