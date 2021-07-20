@@ -1,20 +1,19 @@
 <div class="container">
   <h1>{{title}}</h1>
+  <p>AGREGAR<a href="/product/new"> <img src="/images/plus.png" alt="add"></a></p>
+  <br><br>
   <div class="row">
-    <br>
-    <br>
-    <table class="table table-striped" >
+    <table class="table table-striped">
       {{#each product}}
         <tr>
           <th>{{this.name}}</th>
           <th>{{this.content}}</th>
           {{!-- <th>{{this.imgUrl}}</th> --}}
-          <th><img src="/images/{{this.imgUrl}}.jpg" alt="test"></th>
+          <th><img src="/images/{{this.imgUrl}}.jpg" alt="test" class="imgUrl"></th>
           <th><a href="/product/update/{{this._id}}"><img src="/images/edit.png" alt="edit"></a></th>
           <th><a href="/product/delete/{{this._id}}"><img src="/images/trash.png" alt="trash"></a></th>
         </tr>
       {{/each}}
-      <a href="/product/new"> <img src="/images/plus.png" alt="add"> </a>
     </table>
     <a href="/"></a>
 </div>
