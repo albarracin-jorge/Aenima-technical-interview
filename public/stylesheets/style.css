@@ -14,3 +14,7 @@ img{
 h1, footer{
   text-align: center;
 }
+
+th{
+  padding: 1px;
+}

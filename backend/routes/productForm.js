@@ -14,10 +14,10 @@ router.post('/operation', (req, res, next) => {
       imgUrl: req.body.img
     });  
     product.save();
-  } else {    
-    Product.findByIdAndUpdate(req.body._id, { $set: req.body }, { new: true }, (err, model) => {
+  } else {
+    Product.findByIdAndUpdate(req.body._id, { $set: req.body}, { new: true }, (err, model) => {
       if (err) throw err;
-    });
+    });  
   }
   res.redirect('/');
 });
