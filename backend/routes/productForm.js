@@ -4,6 +4,9 @@ const router = express.Router();
 const mongoose = require('../config/connection')
 let Product = require('../models/product');
 
+
+//Este módulo recibe los valores del metodo post provenientes de productForm.hbs -- This module captures values from productForm.hbs
+//Si id que envia el formulario es null se crea un nuevo producto, caso contrario se hace un update a la id correspondiente
 router.post('/operation', (req, res, next) => {
   console.log(req.body);  
 
