@@ -4,7 +4,9 @@
       "Bash(npm audit:*)",
       "Bash(npm show:*)",
       "Bash(npm install:*)",
-      "Bash(npm view:*)"
+      "Bash(npm view:*)",
+      "Bash(npm info:*)",
+      "Bash(node -e \"const d=require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\);const j=JSON.parse\\(d\\);const h=j.vulnerabilities?.handlebars;console.log\\(''''Patched versions:'''',h?.range\\)\")"
     ]
   }
 }
